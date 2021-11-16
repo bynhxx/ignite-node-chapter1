@@ -1,5 +1,7 @@
 /* 
 
+// -> PRINCIPAIS CONCEITOS <-  //
+
 Node: 
 -> Plataforma open source que permite a execução do JS no servidor
 -> V8 + libuv(foco em I/O assíncrono) + módulos 
@@ -40,8 +42,8 @@ MÉTODOS DE REQUISIÇÕES - HTTP Verbs
 -   GET
 -   POST
 -   DELETE
--   PUT
--   PATCH 
+-   PUT - altera info no servidor
+-   PATCH - altera uma info especifica
 
 
 HTTP STATUS CODES: 
@@ -76,6 +78,50 @@ BOAS PRÁTICAS API Rest
 -> Utilização correta dos métodos HTTP
 -> Utilização correta dos status nos retornos das requisições 
 -> Padrão de nomenclatura nos recursos 
+
+
+// ==> CONFIGURANDO O PROJETO <== //
+-> npm init
+-> express
+-> importar e inicializar express
+-> nodemon
+-> script para nodemon
+
+-   //como o express trabalha nao apenas com
+-   //json, é necessário indicar através deste middleware
+-   //app.use(express.json())
+
+
+
+// ==> TIPOS DE PARÂMETROS <== //
+
+-> Route params: dentro da rota
+(identificar um recurso, editar/ deletar/buscar)
+
+-> Query Params: 
+-   (paginação, filtro de busca)
+-   funciona de forma opcional
+-   diferente do route param
+
+-> Body params: 
+-   objetos para inserção ou alteração de algum recurso
+
+
+
+// ==> MIDDLEWARES <== //
+-   Função que fica entre o request e a response
+-   Realizar validações, verificações...
+-   Parâmetros: reuquest, response, next
+-       next: define se o middleware prossegue 
+-       com a operação ou se para onde está
+-   É possível utilizar de duas maneiras:   
+-       1) Passando o middleware como segundo parâmetro 
+-          no método da rota (e assim apenas nas rotas em 
+-          que foi passado, ele será utilizado)
+-          ex: app.get('/statement', middleware, (req, res) => { ... } 
+-       2) app.use(middleware): assim será utilizado 
+-          em todas as rotas subsequentes 
+
 
 
 

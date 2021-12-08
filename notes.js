@@ -92,7 +92,6 @@ BOAS PRÁTICAS API Rest
 -   //app.use(express.json())
 
 
-
 // ==> TIPOS DE PARÂMETROS <== //
 
 -> Route params: dentro da rota
